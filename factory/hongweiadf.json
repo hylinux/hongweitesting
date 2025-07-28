@@ -1,0 +1,9 @@
+{
+	"name": "hongweiadf",
+	"location": "chinanorth3",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "13f12b57-55d1-4ba5-bcf3-36e1a8148856",
+		"tenantId": "954ddad8-66d7-47a8-8f9f-1316152d9587"
+	}
+}
