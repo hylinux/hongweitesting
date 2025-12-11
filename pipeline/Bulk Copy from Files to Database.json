@@ -91,7 +91,7 @@
 										"useTypeDefault": true
 									}
 								},
-								"enableStaging": true
+								"enableStaging": false
 							},
 							"inputs": [
 								{
