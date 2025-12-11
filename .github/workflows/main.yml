@@ -14,37 +14,31 @@ jobs:
         - uses: Azure/Synapse-workspace-deployment@V1.9.1
           with:
             # Provide the Synapse workspace name where you want to deploy the artifacts.
-            TargetWorkspaceName: 'testforsynapsehongwei'
+            TargetWorkspaceName: 'hongweitestsynapse'
             # Specify the path to the workspace artifacts template.
-            TemplateFile: '' 
+            TemplateFile: './hongweisourcesynapse/TemplateForWorkspace.json' 
             # Specify the path to the template parameter file.
-            ParametersFile: ''
+            ParametersFile: '/hongweisourcesynapse/TemplateParametersForWorkspace.json'
             # Specify deployment parameter values.
-            OverrideArmParameters: # optional, default is 
+            OverrideArmParameters: 'true'  # optional, default is 
             # Provide the type of cloud environment. Valid values are: Azure Public, Azure China, Azure US Government, Azure Germany
             Environment: 'Azure China'
             # Provide the resource group of the target Synapse workspace.
-            resourceGroup: ${{AZURE_SYNAPSE_GROUP}}
+            resourceGroup: 'hongwei-test-for-synapse-group'
             # Provide client id of service principal.
-            clientId: ${{AZURE_CLIENT_ID}}  # optional
+            clientId: 'f9e6df9b-bd00-4c36-bec2-19a2a55f4a40'  # optional
             # Provide client secret of the service principal.
-            clientSecret: ${{secrets.CLIENTSECRET}}   # optional
+            clientSecret: ${{secrets.AZURE_CLIENT_SECRET}}   # optional
             # Provide subscription id.
-            subscriptionId: ${{AZURE_SUBSCRIPTION_ID}}
+            subscriptionId: '8650d1cb-b941-40a4-a1ba-8a9c72db9b3d'
             # Provide tenant id.
-            tenantId: ${{AZURE_TENANT_ID}} 
+            tenantId: '954ddad8-66d7-47a8-8f9f-1316152d9587' 
             # Delete the artifacts which are in the workspace but not in the template.
-            DeleteArtifactsNotInTemplate: # optional
+            DeleteArtifactsNotInTemplate: 'true' # optional
             # Use managed identity to generate the bearer token?
-            managedIdentity: # optional
+            managedIdentity: 'false' # optional
             # Deploy managed private endpoints in the template.
-            deployManagedPrivateEndpoint: # optional
+            deployManagedPrivateEndpoint: 'false' # optional
             # Mark the pipeline as failed if ARM overrides are missing.
-            FailOnMissingOverrides: # optional
-            # Provide path to the root folder.
-            ArtifactsFolder: # optional
-            # Provide name of the operation.
-            operation: 
-            # Source for the npm package. Only for dev testing.
-            npmpackage: # optional
+            FailOnMissingOverrides: 'true' # optional
           
